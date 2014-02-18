@@ -703,6 +703,10 @@
                 if ($this.data(namespace_lc + '.settings').keyPress === true) {
 
                     $(document).on('keyup', $this, function (e) {
+                                
+                        if($this.data(namespace_lc + '.isAnimating') == true) {
+                            return false;
+                        }
 
                         var keyCode = e.which.toString();
 
@@ -1030,5 +1034,10 @@ $(function () {
         start: 8,
         scroll: 3,
         speed: 1500
+    });
+    $('.carousel.example-two').zcarousel({
+        orientation: 'vertical',
+        speed: 3000,
+        scroll: 2
     });
 });
