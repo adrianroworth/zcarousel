@@ -636,6 +636,10 @@ code {
   border-radius: 2px;
 }
 
+code .code-comment {
+  color: #090;
+}
+
 pre {
   padding: 8px 15px;
   background: #191919;
