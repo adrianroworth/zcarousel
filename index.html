@@ -197,6 +197,16 @@
         'scroll': 1, <span class="code-comment">// number of items to scroll on click.</span>
         'autoScrollDelay': 0, <span class="code-comment">// integer indicating the number of milliseconds until the autoscroll fires. 0 means no autoScroll will happen.</span>
         'pauseAutoScrollOnHover': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.</span>
+        'stopAutoScrollOnInteraction': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.
+
+
+
+
+         this needs to cater for when a user clicks on an arrow or nav button too. (and anything else that I may have missed)</span>
+        
+
+
+
         'keyPress': true, <span class="code-comment">// boolean indicating if a key press will move the carousel.</span>
         'speed': 400, <span class="code-comment">// duration of transition (in milliseconds).</span>
         'nav': true, <span class="code-comment">// show slide navigation. Can be 'true' or 'false'.</span>
@@ -214,7 +224,6 @@
   <code>
     // default plugin options
     $.fn[namespace].defaults = {
-        'stopAutoScrollOnInteraction': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.</span>
         'transition': 'scroll', <span class="code-comment">// transition to use when carousel moves on.</span>
         'arrows': true, <span class="code-comment">// boolean indicating if the arrows are dispayed or not.</span>
         'rows': 1, <span class="code-comment">// number of rows of items in a carousel. 0 will result in 1.</span>

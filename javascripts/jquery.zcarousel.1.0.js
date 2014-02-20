@@ -762,13 +762,17 @@
                 // if hovering.
                 var mousedOver = false;
 
+
+                // this needs fixed because at the moment it looks for the scrollEnd event in oder to start another autoscroll.
+                // this is not the way it should be done.  because if you drag it, that will cause the scrollEnd event to fire
+                // and make the carousel cycle faster.
                 if (autoScrollDelay && !isNaN(autoScrollDelay) && autoScrollDelay > 0) {
 
                     var autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
                     $this.on('scrollEnd.' + namespace_lc, function () {
                         if(!mousedOver) {
                             autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
-                        }mousedOver
+                        }
                     });
 
                     function doAutoScroll() {
@@ -784,13 +788,19 @@
                         }).on('mouseleave', function () {
                             mousedOver = false;
                             clearTimeout(autoScrollTimeout);
-                            autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
+                            if ($this.data(namespace + '.settings').stopAutoScrollOnInteraction == false) {
+                                autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
+                            }
                         });
-
                     }
 
+                    // when nav/arrrow is clicked or when the carousel is dragged.... then stop the autoscroll.
                     if ($this.data(namespace + '.settings').stopAutoScrollOnInteraction == true) {
-                        // when nav/arrrow is clicked or when the carousel is dragged.... then stop the autoscroll.
+
+                        $this.on('click mousedown touchstart', function () {
+                            clearTimeout(autoScrollTimeout);
+                        });
+
                     }
                 }
 
@@ -1016,11 +1026,10 @@
         'start': 1, // 
         'scroll': 1, // number of items to scroll on click.
         'transition': 'scroll',
-        //'autoScroll': false, // boolean indicating if the carousel will scroll automatically.
         //'arrows': true, // boolean indicating if the arrows are dispayed or not. ////////////////////////// NOT IMPLEMENTED!!
         'keyPress': true, // boolean indicating if a key press will move the carousel.
-        //'autoScrollDelay': 0, // integer indicating the number of milliseconds until the autoscroll fires.
-        //'stopAutoScrollOnInteraction': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
+        'autoScrollDelay': 0, // integer indicating the number of milliseconds until the autoscroll fires.
+        'stopAutoScrollOnInteraction': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
         //'pauseAutoScrollOnHover': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
         'rows': 1, // number of rows of items in a carousel. 0 will result in 1.
         'columns': 1, // number of columns of items in a carousel. 0 for natural width.
@@ -1058,7 +1067,8 @@ $(function () {
         navHtml: function(index, el) {
             return 'item ' + (index + 1);
         },
-        autoScrollDelay: 4000,
-        pauseAutoScrollOnHover: true
+        autoScrollDelay: 1500,
+        pauseAutoScrollOnHover: true,
+        stopAutoScrollOnInteraction: true
     });
 });
