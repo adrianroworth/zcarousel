@@ -76,6 +76,9 @@
 
 </ul>
 
+<hr />
+<p>With options:</p>
+
 <pre>
   <code>
     $(function () {
@@ -88,19 +91,18 @@
   </code>
 </pre>
 
-
 <ul class="carousel example-two">
 
-  <li style="background: url('http://lorempixel.com/500/280/food/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 1</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/cats/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 2</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 3</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/abstract/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 4</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 5</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/city/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 6</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 7</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/fashion/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 8</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/nature/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 9</p></div></li>
-  <li style="background: url('http://lorempixel.com/500/280/transport/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 10</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 1</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/fashion/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 2</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nature/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 3</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/transport/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 4</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/food/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 5</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/cats/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 6</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 7</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/abstract/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 8</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 9</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/city/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 10</p></div></li>
   <li style="background: url('http://lorempixel.com/500/280/sports/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 11</p></div></li>
   <li style="background: url('http://lorempixel.com/500/280/technics/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 12</p></div></li>
   <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 13</p></div></li>
@@ -109,7 +111,81 @@
 
 </ul>
 
+<hr />
+<pre>
+  <code>
+    $(function () {
+      $('.carousel.example-three').zcarousel({
+        orientation: 'horizontal',
+        speed: 1500,
+        scroll: 2,
+        nav: true,
+        navActiveMarker: true
+      });
+    });
+  </code>
+</pre>
 
+<ul class="carousel example-three">
+
+  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 1</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 2</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 3</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/food/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 4</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/cats/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 5</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 6</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/abstract/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 7</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 8</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/city/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 9</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 10</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/fashion/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 11</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nature/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 12</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/transport/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 13</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/sports/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 14</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/technics/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 15</p></div></li>
+
+</ul>
+
+<hr />
+<p>Custom nav text and autoscroll:
+<pre>
+  <code>
+    $(function () {
+      $('.carousel.example-four').zcarousel({
+          orientation: 'horizontal',
+          speed: 1500,
+          scroll: 2,
+          nav: true,
+          navHtml: function(index, el) {
+              return 'item ' + (index + 1);
+          },
+          autoScrollDelay: 4000
+      });
+    });
+  </code>
+</pre>
+
+<ul class="carousel example-four">
+
+  <li style="background: url('http://lorempixel.com/500/280/transport/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 1</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/sports/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 2</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/technics/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 3</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 4</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/business/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 5</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/city/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 6</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 7</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/fashion/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 8</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nature/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 9</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/nightlife/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 10</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 11</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/food/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 12</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/cats/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 13</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/people/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 14</p></div></li>
+  <li style="background: url('http://lorempixel.com/500/280/abstract/') no-repeat top left; background-size: cover;"><div class="item-inner"><p>This is item 15</p></div></li>
+
+</ul>
+
+<hr />
 
 <p>The available options for zcarousel are:</p>
 <pre>
@@ -119,19 +195,16 @@
         'orientation': 'horizontal', <span class="code-comment">// carousel direction. Can be 'horizonal', 'vertical'.</span>
         'start': 1, <span class="code-comment">// what item the carousel starts on.</span>
         'scroll': 1, <span class="code-comment">// number of items to scroll on click.</span>
-        'keyPress': true, <span class="code-comment">// boolean indicating if a key press will move the carousel.</span>
-        'autoScrollDelay': 0, <span class="code-comment">// integer indicating the number of milliseconds until the autoscroll fires.</span>
-        'stopAutoScrollOnInteraction': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.</span>
+        'autoScrollDelay': 0, <span class="code-comment">// integer indicating the number of milliseconds until the autoscroll fires. 0 means no autoScroll will happen.</span>
         'pauseAutoScrollOnHover': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.</span>
-        'rows': 1, <span class="code-comment">// number of rows of items in a carousel. 0 will result in 1.</span>
-        'columns': 1, <span class="code-comment">// number of columns of items in a carousel. 0 for natural width.</span>
+        'keyPress': true, <span class="code-comment">// boolean indicating if a key press will move the carousel.</span>
         'speed': 400, <span class="code-comment">// duration of transition (in milliseconds).</span>
         'nav': true, <span class="code-comment">// show slide navigation. Can be 'true' or 'false'.</span>
         'navHtml': function() {}, <span class="code-comment">// function to return the inner html of the nav item.</span>
-        'navActiveMarker': true, <span class="code-comment">// have an extra li that animates between the current and next active nav <li>.</span>
+        'navActiveMarker': true, <span class="code-comment">// have an extra &lt;li&gt; that animates between the current and next active nav &lt;li&gt;.</span>
         'navActiveMarkerHtml': null, <span class="code-comment">// inner html of the active nav marker. must be string</span>
         'draggable': true, <span class="code-comment">// carousel is draggable.</span>
-        'snapToSpeed': 250 <span class="code-comment">// speed (in milliseconds) of the carousel snapTo.</span>
+        'snapToSpeed': 250 <span class="code-comment">// speed (in milliseconds) of the carousel snap to item after it is dragged.</span>
     };
   </code>
 </pre>
@@ -141,9 +214,11 @@
   <code>
     // default plugin options
     $.fn[namespace].defaults = {
+        'stopAutoScrollOnInteraction': true, <span class="code-comment">// boolean indicating if the auto scrolling will stop when a user interacts with it.</span>
         'transition': 'scroll', <span class="code-comment">// transition to use when carousel moves on.</span>
-        'autoScroll': false, <span class="code-comment">// boolean indicating if the carousel will scroll automatically.</span>
-        'arrows': true <span class="code-comment">// boolean indicating if the arrows are dispayed or not.</span>
+        'arrows': true, <span class="code-comment">// boolean indicating if the arrows are dispayed or not.</span>
+        'rows': 1, <span class="code-comment">// number of rows of items in a carousel. 0 will result in 1.</span>
+        'columns': 1 <span class="code-comment">// number of columns of items in a carousel. 0 for natural width.</span>
     };
   </code>
 </pre>

@@ -759,23 +759,30 @@
                 $this[namespace]('resizeCarousel');
 
                 var autoScrollDelay = $this.data(namespace + '.settings').autoScrollDelay;
+                // if hovering.
+                var mousedOver = false;
 
                 if (autoScrollDelay && !isNaN(autoScrollDelay) && autoScrollDelay > 0) {
 
                     var autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
                     $this.on('scrollEnd.' + namespace_lc, function () {
-                        autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
+                        if(!mousedOver) {
+                            autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
+                        }mousedOver
                     });
 
                     function doAutoScroll() {
-                        $this.data(namespace_lc + '.arrow').right.trigger('click');
+                        $this.data(namespace_lc + '.arrow').right && $this.data(namespace_lc + '.arrow').right.trigger('click');
+                        $this.data(namespace_lc + '.arrow').down && $this.data(namespace_lc + '.arrow').down.trigger('click');
                     }
 
                     if ($this.data(namespace + '.settings').pauseAutoScrollOnHover == true) {
 
                         $this.on('mouseenter', function () {
+                            mousedOver = true;
                             clearTimeout(autoScrollTimeout);
                         }).on('mouseleave', function () {
+                            mousedOver = false;
                             clearTimeout(autoScrollTimeout);
                             autoScrollTimeout = setTimeout(doAutoScroll, autoScrollDelay);
                         });
@@ -1003,18 +1010,18 @@
 
     };
 
-    // default plugin options
+    // default plugin options. commented options are yet to be implemented.
     $.fn[namespace].defaults = {
         'orientation': 'horizontal', // carousel direction. Can be 'horizonal', 'vertical', or 'both'.
         'start': 1, // 
         'scroll': 1, // number of items to scroll on click.
         'transition': 'scroll',
         //'autoScroll': false, // boolean indicating if the carousel will scroll automatically.
-        'arrows': true, // boolean indicating if the arrows are dispayed or not. ////////////////////////// NOT IMPLEMENTED!!
+        //'arrows': true, // boolean indicating if the arrows are dispayed or not. ////////////////////////// NOT IMPLEMENTED!!
         'keyPress': true, // boolean indicating if a key press will move the carousel.
-        'autoScrollDelay': 0, // integer indicating the number of milliseconds until the autoscroll fires.
-        'stopAutoScrollOnInteraction': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
-        'pauseAutoScrollOnHover': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
+        //'autoScrollDelay': 0, // integer indicating the number of milliseconds until the autoscroll fires.
+        //'stopAutoScrollOnInteraction': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
+        //'pauseAutoScrollOnHover': true, // boolean indicating if the auto scrolling will stop when a user interacts with it.
         'rows': 1, // number of rows of items in a carousel. 0 will result in 1.
         'columns': 1, // number of columns of items in a carousel. 0 for natural width.
         'speed': 400, // duration of transition (in milliseconds).
@@ -1023,21 +1030,35 @@
         'navActiveMarker': false, // have an extra li that animates between the current and next active nav <li>.
         'navActiveMarkerHtml': null, // inner html of the active nav marker. must be string
         'draggable': true, // carousel is draggable.
-        'snapToSpeed': 250 // speed (in milliseconds) of the carousel snapTo.
+        'snapToSpeed': 250 // speed (in milliseconds) of the carousel snap to item after it is dragged.
     };
 
 })(jQuery);
 
 
 $(function () {
-    $('.carousel.example-one').zcarousel({
-        start: 8,
-        scroll: 3,
-        speed: 1500
-    });
+    $('.carousel.example-one').zcarousel();
     $('.carousel.example-two').zcarousel({
         orientation: 'vertical',
         speed: 3000,
         scroll: 2
+    });
+    $('.carousel.example-three').zcarousel({
+        orientation: 'horizontal',
+        speed: 1500,
+        scroll: 2,
+        nav: true,
+        navActiveMarker: true
+    });
+    $('.carousel.example-four').zcarousel({
+        orientation: 'horizontal',
+        speed: 1500,
+        scroll: 2,
+        nav: true,
+        navHtml: function(index, el) {
+            return 'item ' + (index + 1);
+        },
+        autoScrollDelay: 4000,
+        pauseAutoScrollOnHover: true
     });
 });
